@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import CategoriesMenu from './CategoriesMenu';
+import Header from './Header';
+import Products from './sub-components/Products';
 
 function App() {
+
+  const [products, setProducts] = useState([]);
+  const categories = ['Bateria','Cabos','Conectores','Estação de Recarga','Fixações','Inversores','Módulos','Proteções Elétricas']
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <Header/>
+        <p>Página em manutenção</p>
+        <Products products={products}/>
+        <CategoriesMenu categories= {categories}/>
+      </div>
     </div>
   );
 }
