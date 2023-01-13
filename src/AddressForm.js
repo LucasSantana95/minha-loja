@@ -4,10 +4,9 @@ export default function AddressForm(props) {
 
     return (
         <form className="Div-Address">
-            <button onClick={()=>{props.handlePage('cart');}}>{'<'}</button>
             <h1>Endereço para Entrega</h1>
             <input type={'text'} placeholder='Cep' id="txtCep" onChange={(e)=>{
-                if(e.target.value.length == 8){
+                if(e.target.value.length === 8){
                     props.validateCep(e.target.value);
                 }
             }}></input>
@@ -17,7 +16,7 @@ export default function AddressForm(props) {
             <input type={'text'} placeholder='Cidade' id="txtCidade" value={props.AddressInfo.city} readOnly></input>
             <input type={'text'} placeholder='Estado' id="txtEstado" value={props.AddressInfo.uf} readOnly></input>
 
-            <button onClick={(e) => {
+            <button className="button" onClick={(e) => {
                 e.preventDefault()
                 props.checkout();
                 props.handlePage('summary')

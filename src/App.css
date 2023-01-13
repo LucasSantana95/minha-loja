@@ -1,3 +1,14 @@
+*{
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App{
+  display: grid;
+  grid-template-columns: 20% 30% 30% 20%;
+  text-align: center;
+}
 .Div-Header img{
   width: 50px;
   height: 50px;
@@ -8,36 +19,38 @@
   border: none;
 }
 .Div-Header{
+  grid-column: 1;
+  grid-column-end: 5;
+  grid-row: 1;
+  border-bottom: 2px solid black;
+  background-color: #3a48ad;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-  background-color: gray;
-  border-bottom: 2px solid black;
+  height: 80px;
 }
 .Div-Menu{
+  grid-row: 2;
+  grid-column: 1;
+  border-right: 2px solid black;
   display: flex;
   flex-direction: column;
-  left: 0px;
-  width: 350px;
-  height: 700px;
-  background-color: gray;
-  align-items: center;
-  justify-content: center;
-  border-right: 2px solid black;
 }
 .Div-Menu button {
   padding: 20px;
-  background-color: lightgray;
-  border-radius: 15px;
-  width: 300px;
+  background-color: rgb(237, 240, 42);
+  border-radius: 20px;
+  width: 90%;
+  margin-top: 30px;
 }
 .Div-Main{
+  grid-row: 2;
+  grid-column: 2;
+  grid-column-end: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: rgb(27, 25, 25);
-  color: white; 
+  justify-content: space-around;
+
 }
 .Div-Address{
   display: flex;
@@ -45,10 +58,36 @@
   align-items: center;
   justify-content: center;
 }
+.Div-Address input{
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+  padding: 5px;
+}
+
+.Div-Cart{
+  grid-row: 2;
+  grid-column: 1;
+  grid-column-end: 5;
+  background-color: #ccc;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.Div-Address{
+  grid-row: 2;
+  grid-column: 1;
+  grid-column-end: 5;
+  background-color: #ccc;
+}
 .Purchased-Product-Card{
   border: 2px solid black;
 }
-#txtCep{
+/* #txtCep{
   width: 100px;
 }
 #txtRua{
@@ -65,25 +104,9 @@
 }
 #txtCep{
   width: 100px;
-}
-.Card-Products{
-  display: flex;
-  flex-direction: column;
-  border: 2px solid black;
-  width: 400px;
-  height: 600px;
-  padding: 20px;
-}
-.Card-Products input{
-  width: 30px;
-}
-.Card-Products img{
-  width: 400px;
-  height: 300px;
-}
-
-.App {
-  text-align: center;
+} */
+#txtQuantity{
+  width: 20px;
 }
 
 table {
@@ -124,8 +147,6 @@ tbody tr:last-child td {
 }
 tbody:hover > tr td {
   opacity:0.5;
-  
-  /* uncomment for blur effect */
   color:transparent;
   text-shadow:0px 0px 2px rgba(0,0,0,0.8);
 }
@@ -141,4 +162,49 @@ tfoot {
 table img{
   width: 100px;
   height: 100px;
+}
+
+.button {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.button:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.button:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
 }

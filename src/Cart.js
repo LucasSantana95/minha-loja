@@ -4,7 +4,6 @@ export default function Cart(props) {
     
     return (
         <div className="Div-Cart">
-            <button onClick={()=>{props.handlePage('main');}}>{'<'}</button>
             <h1>Carrinho de Compras</h1>
             <table>
                 <thead>

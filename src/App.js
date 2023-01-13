@@ -33,7 +33,7 @@ function App() {
   const [page, setPage] = useState('main')
   const [cartValue, setCartValue] = useState(0)
   const [cartProducts, setCartProducts] = useState([])
-  const [removedProduct, setRemovedProduct] = useState({});
+  const [removedProduct, setRemovedProduct] = useState();
   const categories = [
     { 'description': 'Baterias', 'id': 'Batteries' },
     { 'description': 'Cabos', 'id': 'Cables' },
@@ -44,11 +44,12 @@ function App() {
     { 'description': 'Módulos', 'id': 'Modules' },
     { 'description': 'Proteções Elétricas', 'id': 'Electrical-Protectors' }
   ]
-
-  async function api() {
-    let list = await axios.get('/');
+  // função que chama a api do back, recebendo a lista dos produtos
+  async function apiCall() {
+    let list = await axios.get('/produto');
     fillProductList(list.data);
   }
+  // função que cria os cards dos produtos listados
   function fillProductList(products) {
     let newlist = []
     for (const product of products) {
@@ -57,52 +58,48 @@ function App() {
     }
     setProducts(newlist);
   }
+  // função que cria os botões de categoria do menu lateral
   function createCatButtons() {
     for (const categorie of categories) {
       let button = <CatButtons key={categorie.id} categorie={categorie} handleCategories={handleCategories} />
       setButtons(prevList => [prevList, button]);
     }
   }
+  // função onde filtra os produtos pela categoria clicada
   async function handleCategories(cat) {
-    let catProducts = await axios.get(`/${cat}`)
+    let catProducts = await axios.get(`/produto/${cat}`)
     fillProductList(catProducts.data);
   }
+  // função para manipulação da pagina a ser visualizada
   function handlePage(page) {
     setPage(page);
   }
+  // função para adicionar o produto selecionado no carrinho
   function handleCart(product) {
-    for (const item of cartProducts) {
-      if (item.id === product.id) {
-        if (window.confirm('Produto ja adicinado ao carrinho, deseja adicionar a quantidade ao valor anterior?')) {
-          item.quantity = parseInt(product.quantity) + parseInt(item.quantity);
-        }
-        return '';
-      }
-    }
     let newRow = createCartCard(product);
-    setCartProducts(prevList => [...prevList, product])
     setCart(prevList => [...prevList, newRow])
+    setCartProducts(prevList => [...prevList, product])
     alert(`O Produto ${product.name} foi adicionado ao carrinho!`)
   }
-  function createCartCard(product){
-    let cartCard = <CartRow key={product.id} product={product} handleRemoveProductCart={handleRemoveProductCart} />
+  // função que cria os cards do carrinho
+  function createCartCard(product) {
+    let cartCard = <CartRow key={product.id} teste={teste} product={product} handleRemoveProductCart={handleRemoveProductCart} />
     return cartCard;
   }
+  // função para remover produto do carrinho
   function handleRemoveProductCart(product) {
-    setRemovedProduct(product)
+    if (window.confirm('Deseja Remover esse Produto do Carrinho?')) {
+      setRemovedProduct(product)
+    }
   }
+  // função para guardar os produtos que foram comprados
   function handlePurchasedProducts(cartProducts) {
     for (const product of cartProducts) {
       let newproduct = <PurchasedProduct key={product.id} product={product} />
       setPurchasedProducts(prevList => [...prevList, newproduct])
     }
   }
-  function checkout(){
-    axios.post('/produto', {
-      'Products' : purchasedProducts,
-      'Address': AddressInfo
-    })
-  }
+  // função para validar cep inserido pelo cliente
   function validateCep(cep) {
     axios.get(`//viacep.com.br/ws/${cep}/json/`).then((result) => {
       if (result.data.erro) {
@@ -119,54 +116,87 @@ function App() {
       }
     })
   }
+  // função que manda as informações da compra para o back
+  function checkout() {
+    axios.post('/produto', {
+      'Products': purchasedProducts,
+      'Address': AddressInfo
+    })
+  }
+  function teste(produto){
+    console.log(cartProducts)
+    let index = cartProducts.findIndex(()=>{ return produto});
+    console.log(produto)
+    console.log(index)
+  }
+  // useEffect chamado ao carregar a pagina, para carregamento da lista de produtos e botões
   useEffect(() => {
-    api()
+    apiCall()
     createCatButtons()
   }, []);
-  useEffect(()=>{
+  // useEffect para somar o valor total do carrinho
+  useEffect(() => {
     let newCartValue = 0;
     for (const product of cartProducts) {
       newCartValue += product.quantity * product.value;
     }
     setCartValue(newCartValue);
   }, [cartProducts])
-  useEffect(()=>{
+  // useEffect que da continuação a função de remover produto do carrinho
+  useEffect(() => {
     let newCart = [];
     let newCartProduts = [];
-    for (const item of cartProducts) {
-      if (item.id !== removedProduct.id) {
-        newCart.push(createCartCard(item));
-        newCartProduts.push(item);
+    if (removedProduct) {
+      for (const item of cartProducts) {
+        if (item.id !== removedProduct.id) {
+          newCart.push(createCartCard(item));
+          newCartProduts.push(item);
+        }
       }
+      setCart(newCart);
+      setCartProducts(newCartProduts);
     }
-    setCart(newCart);
-    setCartProducts(newCartProduts);
-  },[removedProduct])
+  }, [removedProduct])
+  // useEffect para checkar se o produto é duplicado
+  useEffect(() => {
+    if (cart.length > 0) {
+      for (let i = 0; i < cart.length - 1; i++) {
+        if (cart[i].props.product.id === cart[cart.length - 1].props.product.id) {
+          if (window.confirm('Produto ja adicinado ao carrinho, deseja adicionar a quantidade ao valor anterior?')) {
+            cart[i].props.product.quantity = parseInt(cart[i].props.product.quantity) + parseInt(cart[cart.length - 1].props.product.quantity)
+          }
+          cart.pop();
+          cartProducts.pop();
+        }
+      }
 
+    }
+  }, [cart])
+  // switch para manupular a pagina
   switch (page) {
     case 'main': return (
       <div className="App">
-        <Header handlePage={handlePage} api={api} />
+        <Header handlePage={handlePage} apiCall={apiCall} />
         <CategoriesMenu>{buttons}</CategoriesMenu>
         <Main>{products}</Main>
       </div>
     );
     case 'cart': return (
       <div className="App">
-        <Header handlePage={handlePage} api={api} />
+        <Header handlePage={handlePage} apiCall={apiCall} />
         <Cart cart={cart} setCartValue={setCartValue} cartValue={cartValue} cartProducts={cartProducts} handlePurchasedProducts={handlePurchasedProducts} handlePage={handlePage} />
       </div>
     );
     case 'address': return (
       <div className="App">
-        <Header handlePage={handlePage} api={api} />
+        <Header handlePage={handlePage} apiCall={apiCall} />
         <AddressForm validateCep={validateCep} AddressInfo={AddressInfo} handlePage={handlePage} checkout={checkout} />
       </div>
     );
     case 'summary': return (
       <div className="App">
-        <Header handlePage={handlePage} api={api} />
-        <Summary purchasedProducts={purchasedProducts} AddressInfo={AddressInfo}/>
+        <Header handlePage={handlePage} apiCall={apiCall} />
+        <Summary purchasedProducts={purchasedProducts} AddressInfo={AddressInfo} />
       </div>
     );
     default: return "Pagina não existe"
