@@ -1,0 +1,22 @@
+.navBar{
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #d4aa00;
+}
+.navBar button{
+    width: 180px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #d4aa00;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.navBar button:hover{
+    background-color: white;
+}
