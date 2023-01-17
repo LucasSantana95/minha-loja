@@ -3,7 +3,7 @@ import { CartRow } from "../CartRow";
 import './style.css'
 
 export const CartBody = ({navigate, cart, setCart}) => {
-    const [totalCartTest, setTotalCartTest] = useState(0)
+    const [totalCart, setTotalCart] = useState(0)
     
     return (
         <>
@@ -22,12 +22,12 @@ export const CartBody = ({navigate, cart, setCart}) => {
                     </thead>
                     <tbody>
                         {cart.map((product) => {
-                            return (<CartRow key={product.id} product={product} cart={cart} setCart={setCart} setTotalCartTest={setTotalCartTest} />)
+                            return (<CartRow key={product.id} product={product} cart={cart} setCart={setCart} setTotalCart={setTotalCart} />)
                         })
                         }
                     </tbody>
                     <tfoot>
-                        <tr><td colSpan={10}>Total do Carrinho: {totalCartTest.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td></tr>
+                        <tr><td colSpan={10}>Total do Carrinho: {totalCart.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td></tr>
                     </tfoot>
                 </table>
 
