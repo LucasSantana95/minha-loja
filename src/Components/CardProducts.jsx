@@ -7,13 +7,10 @@ export const CardProducts = ({ cart, product, setCart }) => {
             total : Number(product.value)*Number(document.getElementById(product.id).value)
         }
         const duplicateData = cart.find(e => e.id === data.id)
-        if (duplicateData) {
-            const indice = cart.indexOf(duplicateData)
-            const cartClone = cart;
-            cartClone[indice] = {...duplicateData, quantity : duplicateData.quantity+ data.quantity }
-            setCart(cartClone)
-        } else {
+        if (!cart.find(e => e.id === data.id)) {
             setCart([...cart, data])
+        } else {
+            alert('Este item já foi adicionado ao carrinho.')
         }
         
     }

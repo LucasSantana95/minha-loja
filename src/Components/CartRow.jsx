@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 export const CartRow = ({ setTotalCartTest, product, cart, setCart }) => {
     const [quantity, setQuantity] = useState(product.quantity)
     const [cartRow, setCartRow] = useState(product)
+    
     const cartClone = cart;
     const handleQuantity = (e) => {
         if (e.target.value < quantity) {
@@ -22,7 +23,7 @@ export const CartRow = ({ setTotalCartTest, product, cart, setCart }) => {
     useEffect(() => {
         console.log(cartRow.total)
         setTotalCartTest(prev => prev + cartRow.total)
-    }, [])
+    }, [cart])
 
     return (
         <>
