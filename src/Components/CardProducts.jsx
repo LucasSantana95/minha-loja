@@ -12,10 +12,8 @@ export const CardProducts = ({ cart, product, setCart }) => {
             const cartClone = cart;
             cartClone[indice] = {...duplicateData, quantity : duplicateData.quantity+ data.quantity }
             setCart(cartClone)
-            localStorage.setItem('cartProducts',JSON.stringify({cart}))
         } else {
             setCart([...cart, data])
-            localStorage.setItem('cartProducts',JSON.stringify({cart}))
         }
         
     }

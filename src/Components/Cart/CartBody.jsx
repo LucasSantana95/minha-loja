@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { CartRow } from "../CartRow";
 import './style.css'
 
 export const CartBody = ({navigate, cart, setCart}) => {
-    const totalCart = Number(cart.reduce((acc,cur) => (cur.total + acc),0)).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+    const [totalCartTest, setTotalCartTest] = useState(0)
     
     return (
         <>
@@ -21,12 +22,12 @@ export const CartBody = ({navigate, cart, setCart}) => {
                     </thead>
                     <tbody>
                         {cart.map((product) => {
-                            return (<CartRow key={product.id} product={product} cart={cart} setCart={setCart} />)
+                            return (<CartRow key={product.id} product={product} cart={cart} setCart={setCart} setTotalCartTest={setTotalCartTest} />)
                         })
                         }
                     </tbody>
                     <tfoot>
-                        <tr><td colSpan={10}>Total do Carrinho: {totalCart}</td></tr>
+                        <tr><td colSpan={10}>Total do Carrinho: {totalCartTest.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</td></tr>
                     </tfoot>
                 </table>
 
