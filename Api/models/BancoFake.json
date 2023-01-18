@@ -5,223 +5,223 @@
         "name" : "Bateria de Litio Dyness B4850 2.4kWh 48V 50Ah",
         "value" : "1000.00",
         "category" : "Batteries",
-        "thumb" : ""
+        "thumb" : "http://localhost:3001/imgs/BATDY-48V-2.4KWH.jpeg"
     },
     {
         "id" : "BATDY-48V-9.6KWH",
         "name" : "Bateria de Litio Dyness Powerbox 9.6kWh 48V 200Ah",
         "value" : "1600.00",
         "category" : "Batteries",
-        "thumb" : ""
+        "thumb" : "http://localhost:3001/imgs/BATDY-48V-9.6KWH.jpeg"
     },
     {
         "id" : "BATDY-48V-7.2KWH",
         "name" : "Bateria de Litio Dyness Powerbox 7.2kWh 48V 100Ah",
         "value" : "1400.00",
         "category" : "Batteries",
-        "thumb" : ""
+        "thumb" : "http://localhost:3001/imgs/BATDY-48V-7.2KWH.jpeg"
     },
     {
         "id" : "BATDY-48V-4.8KWH",
         "name" : "Bateria de Litio Dyness Powerbox 4.8kWh 48V 100Ah",
         "value" : "1200.00",
         "category" : "Batteries",
-        "thumb" : ""
+        "thumb" : "http://localhost:3001/imgs/BATDY-48V-4.8KWH.jpeg"
     },
     {
         "id" : "BATBE-48V-5KWH",
         "name" : "Bateria de Litio 48V 100Ah BelEnergy",
         "value" : "800.00",
         "category" : "Batteries",
-        "thumb" : ""
+        "thumb" : "http://localhost:3001/imgs/BATBE-48V-5KWH.jpeg"
     },
     {
         "id" : "BATDY-48V-3.6KWH",
         "name" : "Bateria de Litio Dyness B3 3.6kWh 48V 75Ah",
         "value" : "950.00",
         "category" : "Batteries",
-        "thumb" : ""
+        "thumb" : "http://localhost:3001/imgs/BATDY-48V-3.6KWH.jpeg"
     },
     {
         "id" : "CBSOLBE-6MM-VM",
         "name" : "Cabo Solar 6mm 0.6/1KV AC 1.8KV DC Vermelho BelEnergy",
         "value" : "250.00",
         "category" : "Cables",
-        "thumb" : ""
+        "thumb" : "http://localhost:3001/imgs/CBSOLBE-6MM-VM.jpeg"
     },
     {
         "id" : "CBSOLBE-6MM-PT",
         "name" : "Cabo Solar 6mm 0.6/1KV AC 1.8KV DC Preto BelEnergy",
         "value" : "250.00",
         "category" : "Cables",
-        "thumb" : ""
+        "thumb" : "http://localhost:3001/imgs/CBSOLBE-6MM-PT.jpeg"
     },
     {
         "id" : "CBSOLBE-6MM-VD",
         "name" : "Cabo Solar 6mm 0.6/1KV AC 1.8KV VD Verde BelEnergy",
         "value" : "250.00",
         "category" : "Cables",
-        "thumb" : ""
+        "thumb" : "http://localhost:3001/imgs/CBSOLBE-6MM-VD.jpeg"
     },
     {
         "id" : "CONECST-MC4",
         "name" : "Conector MC4 Macho e Fêmea",
         "value" : "150.00",
-        "category" : "connectors",
-        "thumb" : ""
+        "category" : "Connectors",
+        "thumb" : "http://localhost:3001/imgs/CONECST-MC4.jpeg"
     },
     {
         "id" : "CONECST-DE4",
         "name" : "Conector Fêmea P/ Microinversores Deye",
         "value" : "90.00",
-        "category" : "connectors",
-        "thumb" : ""
+        "category" : "Connectors",
+        "thumb" : "http://localhost:3001/imgs/CONECST-DE4.jpeg"
     },
     {
         "id" : "CONECST-EN4",
         "name" : "Conector End Cap P/ Microinversores Deye",
         "value" : "80.00",
-        "category" : "connectors",
-        "thumb" : ""
+        "category" : "Connectors",
+        "thumb" : "http://localhost:3001/imgs/CONECST-EN4.jpeg"
     },
     {
         "id" : "CVBEC-MO-220V-7.4KW",
         "name" : "Estação de Recarga Veicular BelEnergy BelCharger 7,4KW",
         "value" : "5000.00",
-        "category" : "charging-stations",
-        "thumb" : ""
+        "category" : "Charging-stations",
+        "thumb" : "http://localhost:3001/imgs/CVBEC-MO-220V-7.4KW.jpeg"
     },
     {
         "id" : "GANCHOAJ2PROL4A",
         "name" : "Suporte Gancho Ajustável c/ Prolongador",
         "value" : "50.00",
-        "category" : "fixings",
-        "thumb" : ""
+        "category" : "Fixings",
+        "thumb" : "http://localhost:3001/imgs/GANCHOAJ2PROL4A.jpeg"
     },
     {
         "id" : "SUPLTM4A",
         "name" : "Suporte Pé em L Telha Metálica",
         "value" : "75.00",
-        "category" : "fixings",
-        "thumb" : ""
+        "category" : "Fixings",
+        "thumb" : "http://localhost:3001/imgs/SUPLTM4A.jpeg"
     },
     {
         "id" : "SUPL4A",
         "name" : "Suporte Pé em L",
         "value" : "40.00",
-        "category" : "fixings",
-        "thumb" : ""
+        "category" : "Fixings",
+        "thumb" : "http://localhost:3001/imgs/SUPL4A.jpeg"
     },
     {
         "id" : "HASTE10X2004A",
         "name" : "Haste Solar 10mm x 200mm",
         "value" : "100.00",
-        "category" : "fixings",
-        "thumb" : ""
+        "category" : "Fixings",
+        "thumb" : "http://localhost:3001/imgs/HASTE10X2004A.jpeg"
     },
     {
         "id" : "GRINT2A",
         "name" : "Grampo Intermediário",
         "value" : "90.00",
-        "category" : "fixings",
-        "thumb" : ""
+        "category" : "Fixings",
+        "thumb" : "http://localhost:3001/imgs/GRINT2A.jpeg"
     },
     {
         "id" : "MINITRI260A",
         "name" : "Mini Trilho Telha Metálica 260mm",
         "value" : "120.00",
-        "category" : "fixings",
-        "thumb" : ""
+        "category" : "Fixings",
+        "thumb" : "http://localhost:3001/imgs/MINITRI260A.jpeg"
     },
     {
         "id" : "INVDBE-H-MO-127V-8KW",
         "name" : "Inversor Belenergy Plus Hibrido 8kW 127V US",
         "value" : "1200.00",
-        "category" : "inverters",
-        "thumb" : ""
+        "category" : "Inverters",
+        "thumb" : "http://localhost:3001/imgs/INVDBE-H-MO-127V-8KW.jpeg"
     },
     {
         "id" : "INVDBE-H-MO-220V-8KW",
         "name" : "Inversor Belenergy Plus Hibrido 8kW 220V EU",
         "value" : "1300.00",
-        "category" : "inverters",
-        "thumb" : ""
+        "category" : "Inverters",
+        "thumb" : "http://localhost:3001/imgs/INVDBE-H-MO-220V-8KW.jpeg"
     },
     {
         "id" : "INVDBE-H-MO-220V-5KW",
         "name" : "Inversor Belenergy Plus Hibrido 5kW 220V",
         "value" : "1000.00",
-        "category" : "inverters",
-        "thumb" : ""
+        "category" : "Inverters",
+        "thumb" : "http://localhost:3001/imgs/INVDBE-H-MO-220V-5KW.jpeg"
     },
     {
         "id" : "INVDBE-TR-380V-33KW",
         "name" : "Inversor Belenergy Plus 33kW Trif 380V",
         "value" : "2200.00",
-        "category" : "inverters",
-        "thumb" : ""
+        "category" : "Inverters",
+        "thumb" : "http://localhost:3001/imgs/INVDBE-TR-380V-33KW.jpeg"
     },
     {
         "id" : "MFVHO-PO-156-460W",
         "name" : "Modulo Fotovoltaico Policristalino Half Cell 156 Células 460W BelEnergy",
         "value" : "1150.00",
         "category" : "Modules",
-        "thumb" : ""
+        "thumb" : "http://localhost:3001/imgs/MFVHO-PO-156-460W.jpeg"
     },
     {
         "id" : "MFVJI-MO-120-460W",
         "name" : "Modulo Fotovoltaico Monocritalino Half Cell 120 Células 460W Jinko",
         "value" : "850.00",
         "category" : "Modules",
-        "thumb" : ""
+        "thumb" : "http://localhost:3001/imgs/MFVJI-MO-120-460W.jpeg"
     },
     {
         "id" : "MFVHO-MO-156-600W",
         "name" : "Modulo Fotovoltaico Monocritalino Half Cell 156 Células 600W BelEnergy",
         "value" : "750.00",
         "category" : "Modules",
-        "thumb" : ""
+        "thumb" : "http://localhost:3001/imgs/MFVHO-MO-156-600W.jpeg"
     },
     {
         "id" : "MFHON-MO-132-665W",
         "name" : "Modulo Fotovoltaico Half Cell Monocritalino 132 Células 665w BelEnergy",
         "value" : "800.00",
         "category" : "Modules",
-        "thumb" : ""
+        "thumb" : "http://localhost:3001/imgs/MFHON-MO-132-665W.jpeg"
     },
     {
         "id" : "MFREN-MO-144-455W",
         "name" : "Modulo Fotovoltaico Monocritalino Half Cell 144 Células 455W BelEnergy BIFACIAL",
         "value" : "850.00",
         "category" : "Modules",
-        "thumb" : ""
+        "thumb" : "http://localhost:3001/imgs/MFREN-MO-144-455W.jpeg"
     },
     {
         "id" : "EPREN-275-15KA",
         "name" : "DPS Clamper Front Classe II CA 275V 15kA",
         "value" : "50.00",
-        "category" : "electrical-protectors",
-        "thumb" : ""
+        "category" : "Electrical-Protectors",
+        "thumb" : "http://localhost:3001/imgs/EPREN-275-15KA.jpeg"
     },
     {
         "id" : "EPREN-275-45KA",
         "name" : "DPS Clamper Front Classe II CA 275V 45kA",
         "value" : "55.00",
-        "category" : "electrical-protectors",
-        "thumb" : ""
+        "category" : "Electrical-Protectors",
+        "thumb" : "http://localhost:3001/imgs/EPREN-275-45KA.jpeg"
     },
     {
-        "id" : "EPREN-1040-40ka",
+        "id" : "EPREN-1040-40KA",
         "name" : "DPS Clamper Solar Classe II CC 1040V 40kA",
         "value" : "80.00",
-        "category" : "electrical-protectors",
-        "thumb" : ""
+        "category" : "Electrical-Protectors",
+        "thumb" : "http://localhost:3001/imgs/EPREN-1040-40KA.jpeg"
     },
     {
         "id" : "EPSTB-1000-DC",
         "name" : "String Box 1E/1S 1000V DC Clamper",
         "value" : "140.00",
-        "category" : "electrical-protectors",
-        "thumb" : ""
+        "category" : "Electrical-Protectors",
+        "thumb" : "http://localhost:3001/imgs/EPSTB-1000-DC.jpeg"
     }
 ]
