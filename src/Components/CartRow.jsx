@@ -22,7 +22,7 @@ export const CartRow = ({ setTotalCart, product, cart, setCart }) => {
     }, [quantity])
     useEffect(() => {
         setTotalCart(prev => prev + cartRow.total)
-    }, [cart])
+    }, [])
 
     return (
         <>
@@ -34,8 +34,8 @@ export const CartRow = ({ setTotalCart, product, cart, setCart }) => {
                 <td>{cartRow.total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</td>
                 <td><button onClick={() => {
                     const newArr = cart.filter((e) => e.id !== cartRow.id)
-                    console.log(newArr);
                     setCart(newArr);
+                    setTotalCart( prev => prev - cartRow.total)
                 }
                 }> Remover </button></td>
             </tr>

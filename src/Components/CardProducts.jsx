@@ -2,23 +2,28 @@ export const CardProducts = ({ cart, product, setCart }) => {
     const onClickButton = (product) => {
         const data = {
             ...product,
-            value : Number(product.value),
+            value: Number(product.value),
             quantity: Number(document.getElementById(product.id).value),
-            total : Number(product.value)*Number(document.getElementById(product.id).value)
+            total: Number(product.value) * Number(document.getElementById(product.id).value)
         }
-        const duplicateData = cart.find(e => e.id === data.id)
         if (!cart.find(e => e.id === data.id)) {
+            alert(`Produto ${data.name} foi adicionado ao carrinho!`)
             setCart([...cart, data])
         } else {
-            alert('Este item já foi adicionado ao carrinho.')
+            if (window.confirm('Este produto ja foi adicionado ao carrinho, deseja adicionar a quantidade?')) {
+                const duplicateItem = cart.filter((e) => e.id === data.id)
+                const newArr = cart.filter((e) => e.id !== data.id)
+                duplicateItem[0].quantity = Number(duplicateItem[0].quantity) + Number(data.quantity)
+                duplicateItem[0].total = Number(data.value) * Number(duplicateItem[0].quantity)
+                setCart([...newArr, ...duplicateItem])
+            }
         }
-        
     }
     return (
         <>
             <div className='card-product'>
                 <figure className='card-figure'>
-                    <img src={product.thumb} className='card-image'></img>
+                    <img src={product.thumb} alt={product.id} className='card-image'></img>
                 </figure>
                 <div className='card-id'>
                     Código: {product.id}

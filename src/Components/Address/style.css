@@ -132,6 +132,13 @@ input.address-input:valid + label > span {
     justify-content: center;
     align-items: center;
 }
+.cep-label{
+  color: rgb(133, 130, 130);
+  font-size: 13px;
+  position: relative;
+  left: 140px;
+  top: -40px;
+}
 @-webkit-keyframes appear {
   100% {
     opacity: 1;
