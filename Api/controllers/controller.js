@@ -3,7 +3,11 @@ const purchaseInfoModel = require('../models/purchaseInfo')
 
 module.exports = {
     get : async (req , res) =>{
-        const products = await productsModel.find();
+        const products = await productsModel.find().sort();
+        const teste = products.sort(function (a, b){ 
+            return Math.floor(Math.random() * 10);
+        })
+        console.log("teste ", teste);
         res.send(products)
     },
     getCat : async (req, res) =>{

@@ -10,7 +10,6 @@ import { useNavigate } from 'react-router-dom';
 export const Rota = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]) 
-    const [addressInfo, setAddressInfo] = useState({})
     const navigate = useNavigate();
     const getProducts = () => {
         api
@@ -33,7 +32,7 @@ export const Rota = () => {
         <Routes>
             <Route path='/' element={<Main cart={cart} navigate={navigate} products={products} setCart={setCart} getProductsByCategory={getProductsByCategory} />} />
             <Route path='/cart' element={<Cart navigate={navigate} cart={cart} setcart={setCart} getProductsByCategory={getProductsByCategory} />} />
-            <Route path='/address' element={<Address navigate={navigate} setCart={setCart} addressInfo={addressInfo} setAddressInfo={setAddressInfo} getProductsByCategory={getProductsByCategory} />} />
+            <Route path='/address' element={<Address navigate={navigate} setCart={setCart} getProductsByCategory={getProductsByCategory} />} />
             <Route path='/summary' element={<Summary navigate={navigate} getProductsByCategory={getProductsByCategory} />} />
         </Routes>
         

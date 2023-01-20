@@ -1,7 +1,16 @@
 import './style.css'
 import { api } from '../../Services/Api';
+import { useState } from 'react';
 
-export const AddresForm = ({ navigate, setCart, addressInfo, setAddressInfo }) => {
+export const AddresForm = ({ navigate, setCart }) => {
+    const [addressInfo, setAddressInfo] = useState({
+        cep : '',
+        street : '',
+        num : '',
+        complement : '',
+        city : '',
+        uf : ''
+    })
 
     const validateCep = (e) => {
         if (e.target.value.length === 8) {
@@ -10,12 +19,12 @@ export const AddresForm = ({ navigate, setCart, addressInfo, setAddressInfo }) =
                     alert('cep invalido');
                 } else {
                     setAddressInfo({
-                        'cep': result.data.cep,
-                        'street': result.data.logradouro,
-                        'num': '',
-                        'complement': 'Sem Complemento',
-                        'city': result.data.localidade,
-                        'uf': result.data.uf
+                        cep: result.data.cep,
+                        street: result.data.logradouro,
+                        num: 'Sem Número',
+                        complement: 'Sem Complemento',
+                        city: result.data.localidade,
+                        uf: result.data.uf
                     })
                 }
             })
