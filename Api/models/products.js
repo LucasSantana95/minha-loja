@@ -1,18 +1,11 @@
-let BancoFake = require('./BancoFake.json')
+const mongoose = require('mongoose');
+const productsSchema = new mongoose.Schema({
+    id : String,
+    name : String,
+    value : String,
+    category : String,
+    thumb : String
+  });
+  const Products = mongoose.model('Products', productsSchema);
 
-module.exports = {
-
-    
-    GetAll(){
-        return BancoFake;
-    },
-    GetCat(cat){
-        let Produts = [];
-        for (const item of BancoFake) {
-            if(item.category == cat){
-                Produts.push(item);
-            }
-        }
-        return Produts;
-    }
-}
+  module.exports = Products;

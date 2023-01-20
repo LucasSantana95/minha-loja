@@ -33,6 +33,8 @@ export const CartBody = ({navigate, cart, setCart}) => {
 
                 <button className="button" onClick={() => {
                     navigate('/address')
+                    localStorage.setItem('Products', JSON.stringify(cart))
+                    localStorage.setItem('Total', totalCart)
                 }}>Finalizar Compra</button>
             </div>
         </>

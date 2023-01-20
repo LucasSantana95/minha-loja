@@ -1,7 +1,7 @@
 import './style.css'
 import { api } from '../../Services/Api';
 
-export const AddresForm = ({ navigate, cart, addressInfo, setAddressInfo }) => {
+export const AddresForm = ({ navigate, setCart, addressInfo, setAddressInfo }) => {
 
     const validateCep = (e) => {
         if (e.target.value.length === 8) {
@@ -32,7 +32,7 @@ export const AddresForm = ({ navigate, cart, addressInfo, setAddressInfo }) => {
 
                 <h1>Insira o Endereço para Entrega</h1>
                 <div key={'cep'} className='address-input-div'>
-                    <input type="number" name="cep" className="address-input" id="cep-input" maxLength={'2'} onChange={(e)=>{validateCep(e)}} required />
+                    <input type="number" name="cep" className="address-input" id="cep-input" maxLength={'2'} onChange={(e)=>{validateCep(e)}} required autoFocus />
                     <label className='label-span'><span>Cep</span></label>
                     <label className='cep-label'> *Digite Somente Numeros</label>
                 </div>
@@ -60,7 +60,11 @@ export const AddresForm = ({ navigate, cart, addressInfo, setAddressInfo }) => {
                 <button onClick={(e) => {
                     e.preventDefault()
                     navigate('/summary')
-                    api.post('/produto', { produtos: cart, endereco: addressInfo })
+                    localStorage.setItem('Address', JSON.stringify(addressInfo))
+                    api.post('/produto', { products : JSON.parse(localStorage.getItem('Products')) , address : addressInfo})
+                    setCart([])
+                    setAddressInfo([])
+
                 }}>Confirmar</button>
                 </div>
             </form>

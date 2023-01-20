@@ -33,8 +33,8 @@ export const Rota = () => {
         <Routes>
             <Route path='/' element={<Main cart={cart} navigate={navigate} products={products} setCart={setCart} getProductsByCategory={getProductsByCategory} />} />
             <Route path='/cart' element={<Cart navigate={navigate} cart={cart} setcart={setCart} getProductsByCategory={getProductsByCategory} />} />
-            <Route path='/address' element={<Address navigate={navigate} cart={cart} addressInfo={addressInfo} setAddressInfo={setAddressInfo} getProductsByCategory={getProductsByCategory} />} />
-            <Route path='/summary' element={<Summary navigate={navigate} cart={cart} addressInfo={addressInfo} getProductsByCategory={getProductsByCategory} />} />
+            <Route path='/address' element={<Address navigate={navigate} setCart={setCart} addressInfo={addressInfo} setAddressInfo={setAddressInfo} getProductsByCategory={getProductsByCategory} />} />
+            <Route path='/summary' element={<Summary navigate={navigate} getProductsByCategory={getProductsByCategory} />} />
         </Routes>
         
     )

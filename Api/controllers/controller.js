@@ -1,14 +1,19 @@
-const model = require('../models/products')
+const productsModel = require('../models/products')
+const purchaseInfoModel = require('../models/purchaseInfo')
 
 module.exports = {
-    get : (req , res) =>{
-        res.send(model.GetAll())
+    get : async (req , res) =>{
+        const products = await productsModel.find();
+        res.send(products)
     },
-    getCat : (req, res) =>{
-        res.send(model.GetCat(req.params.id))
+    getCat : async (req, res) =>{
+        const productsByCategory = await productsModel.find({ category : req.params.id}) 
+        res.send(productsByCategory)
     },
-    post : (req, res)=>{
-        console.log(req.body);
-        res.status(200).send(req.body);
+    post : async (req, res)=>{
+        const products = req.body.products;
+        const address = req.body.address;      
+        const purchase = await purchaseInfoModel.create({ products : products, address : address});
+        res.status(200).send(purchase);
     }
 }
