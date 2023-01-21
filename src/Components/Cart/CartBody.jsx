@@ -32,9 +32,13 @@ export const CartBody = ({navigate, cart, setCart}) => {
                 </table>
 
                 <button className="button" onClick={() => {
-                    navigate('/address')
-                    localStorage.setItem('Products', JSON.stringify(cart))
-                    localStorage.setItem('Total', totalCart)
+                    if(cart.length > 0){
+                        navigate('/address')
+                        localStorage.setItem('Products', JSON.stringify(cart))
+                        localStorage.setItem('Total', totalCart)
+                    }else{
+                        alert('Carrinho esta vazio')
+                    }
                 }}>Finalizar Compra</button>
             </div>
         </>

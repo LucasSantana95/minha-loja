@@ -8,7 +8,6 @@ export const SummaryBody = () => {
     return (
         <>
             <div className='summary-body'>
-
                 <h1>Resumo da Compra</h1>
                 <div className="div-products" >
                     {purchasedProducts.map(e => (

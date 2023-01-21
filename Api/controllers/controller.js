@@ -7,7 +7,6 @@ module.exports = {
         const teste = products.sort(function (a, b){ 
             return Math.floor(Math.random() * 10);
         })
-        console.log("teste ", teste);
         res.send(products)
     },
     getCat : async (req, res) =>{
