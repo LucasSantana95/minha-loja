@@ -1,5 +1,19 @@
-export const CardProducts = ({ cart, product, setCart }) => {
+import ReactModal from "react-modal"
+
+ReactModal.setAppElement('body')
+
+export const CardProducts = ({setIsHidden, cart, product, setCart }) => {
+
+    const handleOpenModal = () =>{
+        setIsHidden('')
+        setTimeout(()=>{
+            setIsHidden('hidden')
+        },3000)
+    }
+
     const onClickButton = (product) => {
+        
+        
         const data = {
             ...product,
             value: Number(product.value),
@@ -7,9 +21,10 @@ export const CardProducts = ({ cart, product, setCart }) => {
             total: Number(product.value) * Number(document.getElementById(product.id).value)
         }
         if (!cart.find(e => e.id === data.id)) {
-            alert(`Produto ${data.name} foi adicionado ao carrinho!`)
+            handleOpenModal();
             setCart([...cart, data])
-        } else {
+        } 
+        else {
             if (window.confirm('Este produto ja foi adicionado ao carrinho, deseja adicionar a quantidade?')) {
                 const duplicateItem = cart.filter((e) => e.id === data.id)
                 const newArr = cart.filter((e) => e.id !== data.id)

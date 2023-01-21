@@ -69,3 +69,18 @@
     justify-content: center;
     align-items: center;
 }
+.product-modal{
+    display: flex;
+    width: 28vw;
+    height: 3vw;
+    background-color: rgba(79, 211, 74, 0.801);
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.hidden{
+    display: none;
+}
