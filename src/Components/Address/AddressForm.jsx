@@ -70,7 +70,7 @@ export const AddresForm = ({ navigate, setCart }) => {
                     e.preventDefault()
                     navigate('/summary')
                     localStorage.setItem('Address', JSON.stringify(addressInfo))
-                    api.post('/produto', { products : JSON.parse(localStorage.getItem('Products')) , address : addressInfo})
+                    api.post('/purchase', { products : JSON.parse(localStorage.getItem('Products')) , address : addressInfo})
                     setCart([])
                     setAddressInfo([])
 
