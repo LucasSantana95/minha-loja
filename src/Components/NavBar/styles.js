@@ -1,22 +1,23 @@
-.navBar{
+import styled from 'styled-components'
+
+export const Menu = styled.nav`
     width: 100vw;
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     background-color: #d4aa00;
-}
-.navBar button{
+`
+export const Button = styled.button`
     width: 180px;
-    height: 40px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     background-color: #d4aa00;
-    border-radius: 20px;
     font-size: 15px;
     font-weight: bold;
-}
-.navBar button:hover{
-    background-color: white;
-}
+    &:hover {
+        background-color: white;
+    }
+`

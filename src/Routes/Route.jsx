@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Cart } from '../Pages/Cart';
-import { Main } from '../Pages/Main';
-import { Address } from '../Pages/Address';
+import { CartPage } from '../Pages/Cart';
+import { MainPage } from '../Pages/Main';
+import { AddressPage } from '../Pages/Address';
 import { api } from '../Services/Api';
-import { Summary } from '../Pages/Summary';
+import { SummaryPage } from '../Pages/Summary';
 import { useNavigate } from 'react-router-dom';
 
 export const Rota = () => {
@@ -30,10 +30,10 @@ export const Rota = () => {
     }, [])
     return (
         <Routes>
-            <Route path='/' element={<Main cart={cart} navigate={navigate} products={products} setCart={setCart} getProductsByCategory={getProductsByCategory} />} />
-            <Route path='/cart' element={<Cart navigate={navigate} cart={cart} setcart={setCart} getProductsByCategory={getProductsByCategory} />} />
-            <Route path='/address' element={<Address navigate={navigate} setCart={setCart} getProductsByCategory={getProductsByCategory} />} />
-            <Route path='/summary' element={<Summary navigate={navigate} getProductsByCategory={getProductsByCategory} />} />
+            <Route path='/' element={<MainPage cart={cart} navigate={navigate} products={products} setCart={setCart} getProductsByCategory={getProductsByCategory} />} />
+            <Route path='/cart' element={<CartPage navigate={navigate} cart={cart} setcart={setCart} getProductsByCategory={getProductsByCategory} />} />
+            <Route path='/address' element={<AddressPage navigate={navigate} setCart={setCart} getProductsByCategory={getProductsByCategory} />} />
+            <Route path='/summary' element={<SummaryPage navigate={navigate} getProductsByCategory={getProductsByCategory} />} />
         </Routes>
         
     )

@@ -1,12 +1,12 @@
-import { CartBody } from '../Components/Cart/CartBody'
-import { Header } from "../Components/Header/Header"
+import { Cart } from '../Components/Cart'
+import { Header } from "../Components/Header"
 
-export const Cart = ({navigate, cart, setcart, getProductsByCategory }) => {
+export const CartPage = ({navigate, cart, setcart, getProductsByCategory }) => {
 
     return (
         <>
             <Header navigate={navigate} getProductsByCategory={getProductsByCategory} />
-            <CartBody navigate={navigate} cart={cart} setCart={setcart}/>
+            <Cart navigate={navigate} cart={cart} setCart={setcart}/>
         </>
     )
 }

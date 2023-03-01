@@ -1,10 +1,10 @@
-import './style.css'
+import * as S from './styles'
 
-export const NavBar = ({getProductsByCategory}) => {
+export const NavBar = ({ getProductsByCategory }) => {
     const navOptions = [
         {
-            name : 'Geral',
-            category : ''
+            name: 'Geral',
+            category: ''
         },
         {
             name: 'Baterias',
@@ -40,14 +40,12 @@ export const NavBar = ({getProductsByCategory}) => {
         },
     ]
     return (
-        <>
-            <nav className="navBar">
-                {
-                    navOptions.map((e) => (
-                        <button key={e.category} onClick={()=>getProductsByCategory(e.category)}>{e.name}</button>
-                    ))
-                }
-            </nav>
-        </>
+        <S.Menu>
+            {
+                navOptions.map((e) => (
+                    <S.Button key={e.category} onClick={() => getProductsByCategory(e.category)}>{e.name}</S.Button>
+                ))
+            }
+        </S.Menu>
     )
 }

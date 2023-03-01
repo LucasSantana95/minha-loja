@@ -1,11 +1,11 @@
-import { Header } from "../Components/Header/Header"
-import { SummaryBody} from '../Components/Summary/SummaryBody'
+import { Header } from "../Components/Header"
+import { Summary} from '../Components/Summary'
 
-export const Summary = ({navigate, cart,addressInfo, getProductsByCategory}) => {
+export const SummaryPage = ({navigate, cart,addressInfo, getProductsByCategory}) => {
     return (
         <>
             <Header navigate={navigate} getProductsByCategory={getProductsByCategory}/>
-            <SummaryBody cart={cart} addressInfo={addressInfo}/>
+            <Summary cart={cart} addressInfo={addressInfo}/>
         </>
     )
 }

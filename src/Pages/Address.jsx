@@ -1,7 +1,7 @@
-import { AddresForm } from "../Components/Address/AddressForm"
-import { Header } from "../Components/Header/Header"
+import { AddresForm } from "../Components/Address"
+import { Header } from "../Components/Header"
 
-export const Address = ({navigate, setCart, getProductsByCategory}) => {
+export const AddressPage = ({navigate, setCart, getProductsByCategory}) => {
     return (
         <>
             <Header navigate={navigate} getProductsByCategory={getProductsByCategory}/>

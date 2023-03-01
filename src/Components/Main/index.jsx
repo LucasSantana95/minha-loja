@@ -1,22 +1,22 @@
-import './style.css'
 import banner from '../../imgs/banner.png';
-import {CardProducts} from '../CardProducts';
+import { CardProducts } from '../CardProducts';
 import { useState } from 'react';
+import * as S from './styles'
 
-export const MainProduct = ({cart, setCart, products }) => {
+export const Main = ({cart, setCart, products }) => {
     const [isHidden, setIsHidden] = useState('hidden');
     
     return (
         <>
-            <main className="main-product">
-                <img src={banner} className='banner-img'></img>
+            <S.Container>
+                <S.Banner src={banner}/>
                 {
                     products.map((product) => (<CardProducts cart={cart} setIsHidden={setIsHidden} key={product.id} product={product} setCart={setCart}/>))
                 }
-                <div className={`product-modal ${isHidden}`}>
+                <S.Modal hidden={isHidden}>
                     <p>Produto foi adicionado ao carrinho! </p>
-                </div>
-            </main>
+                </S.Modal>
+            </S.Container>
         </>
     )
 }
